@@ -1,30 +1,15 @@
-*{
+*{ 
     margin:0;
     padding:0;
-    box-sizing: border-box;/* to box model */
+    box-sizing: border-box;/* to box model */ /*for browswers like opera and safari */
 }
 body{
     font-family: "Merriweather", serif;
     background-color: #ebf2ff;
 
 }
-
-.navbar{
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    background-color: #fff;
-}
-
-.navbar__brand{
-    width: 100px;
-
-}
-.navbar__logo{
-    width:100%;
-}
-
-.nav__item{
+.button__primary{ /*we declared button globally because we can then use the same button class in multiple areas without violating 
+    the rules */
     background-image:linear-gradient( to right,
     #ff512f 0%,
     #dd2476 51%,
@@ -36,24 +21,82 @@ body{
     border-radius: 6px;
     cursor: pointer;
 }
+.container{
+    max-width: 100%;
+    padding:0px 20px;
+    margin:0 auto; /*used to allign the elements in the center if instead of this u used flex to align the first two elements it would 
+    apply only to the both of them and wouldn't keep all the items in the center */
+}
+
+.navbar{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background-color: #fff;
+}
+
+.navbar__brand{ /*name of the div class tag */
+    width: 100px;
+
+}
+.navbar__logo{
+    width:100%;
+}
+
+
 .nav__item:hover{
    border: 2px solid pink;
 
+}
+.hero__image__container{ /*name of the div class tag*/
+    width: 100%;
+}
+.hero__image{
+    width:100%;
+    border-radius: 8px;
+    box-shadow: 0 25px 50px -12px rgba(0,0,0,0.25);
+}
+.hero__text{
+    font-size: 30px;
+    margin: 20px 0px;
 }
 @media (min-width:768px){
     .navbar{
         justify-content: space-between;
         padding: 2px 30px;
     }
+   .hero__container{
+       margin-top: 20px;
+       display: flex;
+       flex-direction: row-reverse;
+       align-items: center;
+       
+   }
 }
 
 @media (min-width:1020px){
+    .container{
+        max-width: 900px;
+    }
     .navbar__brand{
         width:150px;
 
     }
-    .nav__item{
+    .button__primary{
         padding: 20px;
         font-size: 20px;
     }
+    .hero__description{
+        width: 100%;
+    }
+    .hero__text{
+        font-size: 50px;
+    }
+}
+@media (min-width: 1400px)
+    { .container{
+        max-width: 1250px;
+    }
+    
+    
 }
